@@ -15,31 +15,15 @@
 
 
 function openOrSenior(data){
-  // ...
   const Open = "Open"
   const Senior = "Senior"
 
-    const iterator = data.values()
-    for (const element of iterator) {
-        
-    console.log(element)        
+  return data.map(([age, handicap]) => {
+    if (age >= 55 && handicap > 7) {
+      return Senior;
     }
-
-  iterator.forEach((element,index,itself) => {
-    console.log(element)
-    if(element > 0){
-        const result = element.map((item,index)=>{
-            index >= 1 ? Open : item
-            return result
-        })
-        }else{
-             const result = element.map((item,index)=>{
-            index >= 1 ? Senior : item
-            return result
-        })
-        }
+    return Open;
   });
-  return iterator       
 }
 
 
